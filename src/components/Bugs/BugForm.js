@@ -77,7 +77,7 @@ class BugForm extends Component {
               /> Yes, I could reproduce this error when trying again
             </label>
           </div>
-          <button className="btn btn-success btn-lg" onClick={this.onReportBugClick} >Report bug</button>
+          <button type="submit" className="btn btn-success btn-lg" onClick={this.onReportBugClick} >Report bug</button>
       </div>
     );
   }
