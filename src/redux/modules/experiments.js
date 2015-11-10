@@ -1,30 +1,33 @@
 const ADD = 'experiments/ADD';
 
 const initialState = {
-  experiments = [],
-  lastExperimentId = 0
+  list: [],
+  lastId: 0
 };
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case ADD:
+      const nextId = state.lastId + 1;
       return {
-        ...state, 
-        experiments: [
-          ...state.experiments,
+        ...state,
+        list: [
+          ...state.list,
           {
-            id: state.lastExperimentId + 1,
+            id: nextId,
             name: action.name
           }
         ],
-        lastExperimentId: state.lastExperimentId + 1
-      }
+        lastId: nextId
+      };
     default:
       return state;
   }
 }
 
 export function addExperiment(name) {
+  console.log('add Experiment 2');
+
   return {
     type: ADD,
     name: name

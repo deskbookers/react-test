@@ -1,12 +1,25 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import DocumentMeta from 'react-document-meta';
+import {connect} from 'react-redux';
+import {Link} from 'react-router';
 import {Button} from'components';
+import * as experimentActions from 'redux/modules/experiments';
 
+@connect(
+  state => ({experiments: state.experiments.list}),
+  {...experimentActions}
+)
 export default
 class Experiments extends Component {
+  static propTypes = {
+    experiments: PropTypes.array,
+    addExperiment: PropTypes.func.isRequired
+  };
 
   render() {
     const styles = require('./Experiments.scss');
+    const { addExperiment } = this.props;
+
     return (
       <div className={styles.experiments + ' container'}>
         <DocumentMeta title="Experiments"/>
@@ -15,28 +28,27 @@ class Experiments extends Component {
 
           <div className="col-sm-3">
             <div className="list-group">
-              <a className="list-group-item" href="">Homepage<br/><small>Active</small></a>
-              <a className="list-group-item" href="">Search Filter<br/><small>Succeeded</small></a>
-              <a className="list-group-item" href="">Search Filter<br/><small>Cancelled</small></a>
+              {this.props.experiments.forEach(exp => (
+                <Link className="list-group-item" to="">{exp.name}<br/><small>{exp.state || 'Unstarted'}</small></Link>
+              ))}
+              <span className="list-group-item" onClick={addExperiment('Test')}>Add</span>
             </div>
-            <span onclick=addExperiment();>Add</span>  
           </div>
 
           <div className="col-sm-9">
-            <h1>
-              Search Price Filter
+            <h1>Search Price Filter</h1>
 
-              {/* for just created experiments */}
-              <div className="btn-group pull-right">
-                <a className="btn btn-success">Start experiment</a>
-              </div>
+            {/* for just created experiments */}
+            <div className="btn-group pull-right">
+              <a className="btn btn-success">Start experiment</a>
+            </div>
 
-              {/* for activated experiments */}
-              <div className="btn-group pull-right">
-                <a className="btn btn-success">Succeeded</a>
-                <a className="btn btn-danger">Failed</a>
-              </div>
-            </h1>
+            {/* for activated experiments */}
+            <div className="btn-group pull-right">
+              <a className="btn btn-success">Succeeded</a>
+              <a className="btn btn-danger">Failed</a>
+            </div>
+
             <table className="table">
               <tbody>
                 <tr>
