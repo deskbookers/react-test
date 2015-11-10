@@ -20,7 +20,6 @@ class Bugs extends Component {
   }
 
   render() {
-    const styles = require('./Bugs.scss');
     const {filterType, bugs, addBug} = this.props;
     return (
       <div className="container">
