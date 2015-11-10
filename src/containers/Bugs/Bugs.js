@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import DocumentMeta from 'react-document-meta';
-import bugActions from '../../actions/bugs';
+import * as bugActions from '../../actions/bugs';
 import {connect} from 'react-redux';
+import BugForm from '../../components/Bugs/BugForm';
 
 @connect(
   state => ({
@@ -19,7 +20,7 @@ class Bugs extends Component {
 
   render() {
     const styles = require('./Bugs.scss');
-    const {filterType, bugs} = this.props;
+    const {filterType, bugs, addBug} = this.props;
     return (
       <div className="container">
         <div className="row">
@@ -27,8 +28,8 @@ class Bugs extends Component {
             {/*<BugFilter type={filterType}/>*/}
           </div>
           <div className="col-sm-9">
-            {/*<BugList bugs={bugs} filterType={filterType}/>
-            <BugForm />*/}
+            {/*<BugList bugs={bugs} filterType={filterType}/>*/}
+            <BugForm addBug={addBug}/>
           </div>
         </div>
       </div>

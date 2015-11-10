@@ -1,7 +1,11 @@
-import { ADD_BUG, REMOVE_BUG, CLOSE_BUG } from '../actions/bugs'
-import { BUG_STATUS_OPEN, BUG_STATUS_CLOSED, BUG_STATUS_REMOVED } from '../utils/bugStatus'
+import { ADD_BUG, REMOVE_BUG, CLOSE_BUG } from '../../actions/bugs'
+import { BUG_STATUS_OPEN, BUG_STATUS_CLOSED, BUG_STATUS_REMOVED } from '../../utils/bugStatus'
 
-export default function(state = {}, action) {
+var initalState = {
+  bugs: []
+};
+
+export default function(state = initalState, action) {
   switch (action.type) {
     case ADD_BUG:
     	var newState = Object.assign({}, state);
