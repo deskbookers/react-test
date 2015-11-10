@@ -25,11 +25,11 @@ class Bugs extends Component {
       	<DocumentMeta title="React Redux Example: Bugs"/>
         <div className="row">
           <div className="col-sm-3">
-            {/*<BugFilter type={filterType}/>*/}
+            {/* <BugFilter type={filterType}/> */}
           </div>
           <div className="col-sm-9">
             <BugList bugs={bugs} filterType={filterType}/>
-            {/*<BugForm />*/}
+            {/* <BugForm /> */}
           </div>
         </div>
       </div>

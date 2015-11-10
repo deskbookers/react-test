@@ -19,7 +19,7 @@ export default class BugList extends Component {
     const {bugs, filterType} = this.props;
 
     if (filterType) {
-		bugs.filter((bug) => bug.status === filterType);
+      bugs.filter((bug) => bug.status === filterType);
     }
 
     return (
