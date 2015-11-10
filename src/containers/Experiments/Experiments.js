@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import DocumentMeta from 'react-document-meta';
+import {Button} from'components';
 
 export default
 class Experiments extends Component {
@@ -61,8 +62,8 @@ class Experiments extends Component {
                   <td colSpan="2">
                     <div className="well">
                       <div className="btn-group">
-                        <a className="btn btn-default btn-sm" href="">+ Add column</a>
-                        <a className="btn btn-default btn-sm" href="">+ Add row</a>
+                        <Button buttonStyle="default" buttonSize="sm" to="/test/3">+ Add column</Button>
+                        <Button buttonSize="sm" to="">+ testAdd row</Button>
                       </div>
                       <table className="table">
                         <thead>

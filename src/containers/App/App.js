@@ -1,24 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { IndexLink, Link } from 'react-router';
+import { IndexLink } from 'react-router';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { InfoBar } from 'components';
+import { InfoBar, NavBarLink } from 'components';
 import { pushState } from 'redux-router';
 import config from '../../config';
-
-const NavbarLink = ({to, className, component, children}) => {
-  const Comp = component || Link;
-
-  return (
-    <Comp to={to} className={className} activeStyle={{
-      color: '#33e0ff'
-    }}>
-      {children}
-    </Comp>
-  );
-};
 
 @connect(
   state => ({user: state.auth.user}),
@@ -69,20 +57,20 @@ export default class App extends Component {
         <DocumentMeta {...config.app}/>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
-            <NavbarLink to="/" className="navbar-brand" component={IndexLink}>
+            <NavBarLink to="/" className="navbar-brand" component={IndexLink}>
               <div className={styles.brand}/>
               React Redux Example
-            </NavbarLink>
+            </NavBarLink>
 
             <ul className="nav navbar-nav">
-              {user && <li><NavbarLink to="/chat">Chat</NavbarLink></li>}
+              {user && <li><NavBarLink to="/chat">Chat</NavBarLink></li>}
 
-              <li><NavbarLink to="/widgets">Widgets</NavbarLink></li>
-              <li><NavbarLink to="/survey">Survey</NavbarLink></li>
-              <li><NavbarLink to="/about">About Us</NavbarLink></li>
-              <li><NavbarLink to="/experiments">Experiments</NavbarLink></li>
-              <li><NavbarLink to="/bugs">Bugs</NavbarLink></li>
-              {!user && <li><NavbarLink to="/login">Login</NavbarLink></li>}
+              <li><NavBarLink to="/widgets">Widgets</NavBarLink></li>
+              <li><NavBarLink to="/survey">Survey</NavBarLink></li>
+              <li><NavBarLink to="/about">About Us</NavBarLink></li>
+              <li><NavBarLink to="/experiments">Experiments</NavBarLink></li>
+              <li><NavBarLink to="/bugs">Bugs</NavBarLink></li>
+              {!user && <li><NavBarLink to="/login">Login</NavBarLink></li>}
               {user && <li className="logout-link"><a href="/logout" onClick={::this.handleLogout}>Logout</a></li>}
             </ul>
             {user &&
