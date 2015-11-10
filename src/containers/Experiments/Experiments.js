@@ -19,6 +19,7 @@ class Experiments extends Component {
               <a className="list-group-item" href="">Search Filter<br/><small>Succeeded</small></a>
               <a className="list-group-item" href="">Search Filter<br/><small>Cancelled</small></a>
             </div>
+            <span onclick=addExperiment();>Add</span>  
           </div>
 
           <div className="col-sm-9">
