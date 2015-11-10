@@ -16,53 +16,6 @@
   
   <div className="col-sm-9">
     {/*LIST*/}
-    <h1>All bugs</h1>
-
-    {/* This part is a list of all the bugs filtered by the filter on the left */}
-    <div className="list-group">
-      <div className="list-group-item">
-        <div className="row">
-          <div className="col-sm-9">
-            <p className={styles.mBottom0 + ' lead'}>When I enter the page then shit doesn't work anymore</p>
-            <a href="" target="_blank">https://www.deskbookers.com/nl-nl/s-hertogenbosch/hnk-den-bosch/workplace/19592</a>
-          </div>
-          <div className="col-sm-3">
-            <div className="btn-group pull-right">
-              <button className="btn btn-success">Solve</button>
-              <button className="btn btn-default">Remove</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="list-group-item">
-        <div className="row">
-          <div className="col-sm-9">
-            <p className={styles.mBottom0 + ' lead'}>When I enter the page then shit doesn't work anymore</p>
-            <a href="" target="_blank">https://www.deskbookers.com/nl-nl/s-hertogenbosch/hnk-den-bosch/workplace/19592</a>
-          </div>
-          <div className="col-sm-3">
-            <div className="btn-group pull-right">
-              <button className="btn btn-success">Solve</button>
-              <button className="btn btn-default">Remove</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="list-group-item">
-        <div className="row">
-          <div className="col-sm-9">
-            <p className={styles.mBottom0 + ' lead'}>When I enter the page then shit doesn't work anymore</p>
-            <a href="" target="_blank">https://www.deskbookers.com/nl-nl/s-hertogenbosch/hnk-den-bosch/workplace/19592</a>
-          </div>
-          <div className="col-sm-3">
-            <div className="btn-group pull-right">
-              <button className="btn btn-success">Solve</button>
-              <button className="btn btn-default">Remove</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     {/*FORM*/}
     {/* Show this part when having clicked on "report new bug" */}
