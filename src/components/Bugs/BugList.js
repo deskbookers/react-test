@@ -17,17 +17,16 @@ export default class BugList extends Component {
 
   render() {
     const {bugs, filterType} = this.props;
-    var filteredBugs = bugs;
+    var filteredBugs = bugs ? bugs : [];
 
     if (filterType){
-    	var filteredBugs = bugs.filter((bug) => bug.status === filterType);
+    	filteredBugs = bugs.filter((bug) => bug.status === filterType);
     }
 
     return (
     	<div>
-			<h1>All bugs</h1>
-
-			{bugs && bugs.length &&
+			<h1>All bugs ({filteredBugs.length})</h1>
+			{filteredBugs && filteredBugs.length > 0 &&
 				<div className="list-group">
 					{
 					filteredBugs.map((bug) => 
