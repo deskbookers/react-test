@@ -26,8 +26,6 @@ export default function reducer(state = initialState, action = {}) {
 }
 
 export function addExperiment(name) {
-  console.log('add Experiment 2');
-
   return {
     type: ADD,
     name: name

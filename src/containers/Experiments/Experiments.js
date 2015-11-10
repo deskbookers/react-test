@@ -5,14 +5,9 @@ import {Link} from 'react-router';
 import {Button} from'components';
 import * as experimentActions from 'redux/modules/experiments';
 
-@connect(
-  state => ({experiments: state.experiments.list}),
-  {...experimentActions}
-)
-export default
 class Experiments extends Component {
   static propTypes = {
-    experiments: PropTypes.array,
+    experiments: PropTypes.object.isRequired,
     addExperiment: PropTypes.func.isRequired
   };
 
@@ -28,10 +23,10 @@ class Experiments extends Component {
 
           <div className="col-sm-3">
             <div className="list-group">
-              {this.props.experiments.forEach(exp => (
+              {this.props.experiments.list.forEach(exp => (
                 <Link className="list-group-item" to="">{exp.name}<br/><small>{exp.state || 'Unstarted'}</small></Link>
               ))}
-              <span className="list-group-item" onClick={addExperiment('Test')}>Add</span>
+              <span className="list-group-item" onClick={() => addExperiment('Test')}>Add</span>
             </div>
           </div>
 
@@ -175,3 +170,8 @@ class Experiments extends Component {
   }
 }
 
+function selectState(state) {
+  return {experiments: state.experiments};
+}
+
+export default connect(selectState, {...experimentActions})(Experiments);
