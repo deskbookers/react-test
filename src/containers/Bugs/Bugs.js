@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import DocumentMeta from 'react-document-meta';
-import bugActions from '../../actions/bugs';
+import * as bugActions from '../../actions/bugs';
 import {connect} from 'react-redux';
 import BugList from '../../components/Bugs/BugList';
+import BugForm from '../../components/Bugs/BugForm';
 
 @connect(
   state => ({
@@ -19,7 +20,8 @@ class Bugs extends Component {
   }
 
   render() {
-    const {filterType, bugs} = this.props;
+    const styles = require('./Bugs.scss');
+    const {filterType, bugs, addBug} = this.props;
     return (
       <div className="container">
       	<DocumentMeta title="React Redux Example: Bugs"/>
@@ -29,7 +31,7 @@ class Bugs extends Component {
           </div>
           <div className="col-sm-9">
             <BugList bugs={bugs} filterType={filterType}/>
-            {/* <BugForm /> */}
+            <BugForm addBug={addBug}/>
           </div>
         </div>
       </div>
