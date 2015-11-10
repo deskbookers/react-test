@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import DocumentMeta from 'react-document-meta';
 import bugActions from '../../actions/bugs';
 import {connect} from 'react-redux';
-import BugList from '../../components/Bugs/BugList'
+import BugList from '../../components/Bugs/BugList';
 
 @connect(
   state => ({
@@ -19,10 +19,10 @@ class Bugs extends Component {
   }
 
   render() {
-    const styles = require('./Bugs.scss');
     const {filterType, bugs} = this.props;
     return (
       <div className="container">
+      	<DocumentMeta title="React Redux Example: Bugs"/>
         <div className="row">
           <div className="col-sm-3">
             {/*<BugFilter type={filterType}/>*/}
