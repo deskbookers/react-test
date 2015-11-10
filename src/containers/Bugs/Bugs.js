@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import DocumentMeta from 'react-document-meta';
-import bugActions from '../actions/bugs';
+import bugActions from '../../actions/bugs';
+import {connect} from 'react-redux';
 
 @connect(
   state => ({
@@ -23,11 +24,11 @@ class Bugs extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-3">
-            <BugFilter type={filterType}/>
+            {/*<BugFilter type={filterType}/>*/}
           </div>
           <div className="col-sm-9">
-            <BugList bugs={bugs} filterType={filterType}/>
-            <BugForm />
+            {/*<BugList bugs={bugs} filterType={filterType}/>
+            <BugForm />*/}
           </div>
         </div>
       </div>
