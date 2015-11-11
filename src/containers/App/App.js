@@ -82,6 +82,7 @@ export default class App extends Component {
               <li><NavbarLink to="/about">About Us</NavbarLink></li>
               <li><NavbarLink to="/experiments">Experiments</NavbarLink></li>
               <li><NavbarLink to="/bugs">Bugs</NavbarLink></li>
+              <li><NavbarLink to="/bugtracker">Bug Tracker</NavbarLink></li>
               {!user && <li><NavbarLink to="/login">Login</NavbarLink></li>}
               {user && <li className="logout-link"><a href="/logout" onClick={::this.handleLogout}>Logout</a></li>}
             </ul>

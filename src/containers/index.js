@@ -10,3 +10,4 @@ export LoginSuccess from './LoginSuccess/LoginSuccess';
 export Survey from './Survey/Survey';
 export NotFound from './NotFound/NotFound';
 export Bugs from './Bugs/Bugs';
+export BugTracker from './BugTracker/BugTracker';
