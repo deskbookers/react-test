@@ -4,8 +4,8 @@ import * as bugActions from '../../actions/bugs';
 
 @connect(
   state => ({
-    bugs: state.bugs,
-    filterType: state.filterType
+    bugs: state.bugs.bugs,
+    filterType: state.bugs.filterType
   }),
   {...bugActions})
 
@@ -29,8 +29,8 @@ export default class BugList extends Component {
 			{filteredBugs && filteredBugs.length > 0 &&
 				<div className="list-group">
 					{
-					filteredBugs.map((bug) => 
-						<div className="list-group-item" key={bug.id}>
+					filteredBugs.map((bug, i) => 
+						<div className="list-group-item" key={i}>
 							<div className="row">
 								<div className="col-sm-9">
 									<p className="lead">When I {bug.userAction} then {bug.result} (by {bug.user})</p>
